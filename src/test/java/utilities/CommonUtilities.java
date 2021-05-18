@@ -44,17 +44,6 @@ public class CommonUtilities {
 		}
 	}
 
-	public void verifyUsermenu(String ElementXapth) throws IOException {
-		List<WebElement> userMenuItems = BaseTest.driver.findElements(By.xpath(ElementXapth));
-		String[] ExpectedmenuItems = { "My Profile", "My Settings", "Developer Console",
-				"Switch to Lightning Experience", "Logout" };
-
-		for (int i = 0; i < userMenuItems.size(); i++) {
-			Assert.assertEquals(userMenuItems.get(i).getText(), ExpectedmenuItems[i]);
-			BaseTest.test.log(Status.INFO, ExpectedmenuItems[i] + " is Verified");
-		}
-	}
-
 	public boolean waitForElementVisible(WebElement element) {
 		try {
 			WebDriverWait wait = new WebDriverWait(BaseTest.driver, 30);
@@ -67,46 +56,23 @@ public class CommonUtilities {
 
 	public String takeScreenshot() throws IOException {
 		TakesScreenshot screenshot = (TakesScreenshot) BaseTest.driver;
-		String addDate = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-		String destinationPath = System.getProperty("user.dir") + "\\Reports\\Screenshots\\" + addDate + ".PNG";
+		String addDate = new SimpleDateFormat("yyyymmddhhmm").format(new Date());
+		String destinationPath = System.getProperty("user.dir")+"\\Reports\\Screenshots\\" + addDate + ".PNG";
 		File srcfile = screenshot.getScreenshotAs(OutputType.FILE);
 		File dstfile = new File(destinationPath);
 		FileUtils.copyFile(srcfile, dstfile);
-		//        test.addScreenCaptureFromPath(destinationPath);
-		//        test.fail("Login to homepage failed");
 		return destinationPath;
 	}
 
-	//	public void logintoSFDC(String username, String pass) throws InterruptedException, IOException {
-	////        test = extent.createTest("logintoSFDC_TC02");
-	//		WebElement username1 = BaseTest.driver.findElement(By.name("username"));
-	//		enterText(username1, username, "Username");
-	//		BaseTest.test.log(Status.INFO, "usernmae is enterd");
-	//		WebElement password = BaseTest.driver.findElement(By.name("pw"));
-	//		enterText(password, pass, "Password");
-	//		BaseTest.test.log(Status.INFO, "Password field");
-	//		WebElement loginButton = BaseTest.driver.findElement(By.id("Login"));
-	//		clickonElement(loginButton, "LoginButton");
-	//		Thread.sleep(5000);
-	////		verifyText(BaseTest.driver.getTitle(), readPropertiesfile("Messages", "homepage.title"), "HomePage title");
-	//	}
+	public void verifyUsermenu(String ElementXapth) throws IOException {
+		List<WebElement> userMenuItems = BaseTest.driver.findElements(By.xpath(ElementXapth));
+		String[] ExpectedmenuItems = { "My Profile", "My Settings", "Developer Console",
+				"Switch to Lightning Experience", "Logout" };
 
-//	public void logintoSFDC() throws InterruptedException, IOException {
-//		DataUtilities oDataUtils = new DataUtilities();
-//		WebElement username1 = BaseTest.driver.findElement(By.xpath(oDataUtils.ReadWebElementProperties("we.username.xpath")));
-//		String username = oDataUtils.ReadAccountProperties("prodaccount.name");
-//		enterText(username1, username, "Username");
-//		BaseTest.test.log(Status.INFO, "usernmae is enterd");
-//
-//		WebElement password = BaseTest.driver.findElement(By.xpath(oDataUtils.ReadWebElementProperties("we.password.xpath")));
-//		String pass = oDataUtils.ReadAccountProperties("prodaccount.password");
-//		enterText(password, pass, "Password");
-//		BaseTest.test.log(Status.INFO, "Password field");
-//
-//		WebElement loginButton = BaseTest.driver.findElement(By.xpath(oDataUtils.ReadWebElementProperties("we.login.xpath")));
-//		clickonElement(loginButton, "LoginButton");
-//		Thread.sleep(5000);
-//		//		verifyText(BaseTest.driver.getTitle(), readPropertiesfile("Messages", "homepage.title"), "HomePage title");
-//	}
+		for (int i = 0; i < userMenuItems.size(); i++) {
+			Assert.assertEquals(userMenuItems.get(i).getText(), ExpectedmenuItems[i]);
+			BaseTest.test.log(Status.INFO, ExpectedmenuItems[i] + " is Verified");
+		}
+	}
 
 }

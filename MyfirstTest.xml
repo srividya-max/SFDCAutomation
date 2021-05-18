@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="LoginModule">
+	<test name="LoginTest">
+<!--  		<parameter name="BrowserName" value="chrome"></parameter>  -->
+		<classes>
+			<class name="testcases.VerifyLoginFunctionality">
+				<methods>
+					<include name="VerifyLoginErrorMessage01"></include>
+					<exclude name="VerifyLoginErrorMessageo2"></exclude>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- <test name="Test on Edge"> <parameter name="BrowserName" value="ie"></parameter> 
+		<classes> <class name="testcases.VerifyLoginFunctionality"> <methods> <include 
+		name="VerifyLoginErrorMessage01"></include> <exclude name="VerifyLoginErrorMessage02"></exclude> 
+		</methods> </class> </classes> </test> -->
+
+</suite>

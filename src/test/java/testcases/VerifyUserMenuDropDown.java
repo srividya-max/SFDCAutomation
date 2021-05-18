@@ -1,7 +1,7 @@
 package testcases;
 
-import base.BaseTest;
+//import base.BaseTest;
 
-public class VerifyUserMenuDropDown extends BaseTest{
+public class VerifyUserMenuDropDown {//extends BaseTest
 
 }

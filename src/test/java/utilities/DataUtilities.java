@@ -28,17 +28,10 @@ public class DataUtilities {
 	
 	public String ReadPageURLproperties(String PageURLKey) throws IOException {
 		BaseTest.sProperties = new Properties();
-		FileInputStream fis = new FileInputStream(AppConstants.USERACCOUNTS_PROPERTYFILE_PATH);
+		FileInputStream fis = new FileInputStream(AppConstants.PAGE_URL_PROPERTYFILE_PATH);
 		BaseTest.sProperties.load(fis);
 		return BaseTest.sProperties.getProperty(PageURLKey);
 		
 	}
 	
-	
-	
-
-	
-	
-	
-
 }
