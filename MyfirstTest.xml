@@ -6,7 +6,7 @@
 			<class name="testcases.VerifyLoginFunctionality">
 				<methods>
 					<include name="VerifyLoginErrorMessage01"></include>
-					<exclude name="VerifyLoginErrorMessageo2"></exclude>
+					<include name="VerifyLoginErrorMessageo2"></include>
 				</methods>
 			</class>
 		</classes>
