@@ -4,9 +4,9 @@
 	<test thread-count="2" name="Test">
 <!--  	<parameter name="BrowserName" value="chrome"></parameter> -->
 		<classes>
-			<class name="testcases.VerifyLoginFunctionality">
+			<class name="testcases.VerifyContactsModule">
 				<methods>
-					<include name="VerifyLoginErrorMessage02"></include>
+					<include name="VerifyContacts08"></include>
 				<!--  	<exclude name="VerifyLoginErrorMessage02"></exclude>-->
 				</methods>
 			</class>

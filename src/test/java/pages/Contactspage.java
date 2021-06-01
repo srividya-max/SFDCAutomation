@@ -64,44 +64,44 @@ public class Contactspage{
 	@FindBy(xpath ="//*[@id='editPage']/div[1]/table/tbody/tr/td[2]/input[1]")
 	public WebElement Save;
 	
-	//*[@id="00B5e0000061C6T_listSelect"]/option[1]
-	
 	@FindBy(xpath ="//*[@id='bodyCell']/div[1]/div[1]/div[1]/h2")
 	public WebElement VerifyView;
 	
 	@FindBy(xpath ="//*[@id='filter_element']/div/span/span[2]/a[1]")//*[@id='00B5e0000060Yrb_filterLinks']/a[1]//*[@id="filter_element"]/div/span/span[2]/a[1]
 	public WebElement EditView;
 	
-	@FindBy(xpath ="//*[@id='fcol1']/option[2]")
-	public WebElement Field;
+	//*[@id='hotlist_mode']/option[1]
 	
-	@FindBy(xpath ="//*[@id='fop1']/option[4]")
-	public WebElement Operator;
+	@FindBy(xpath ="//*[@id=\"hotlist_mode\"]/option[1]")
+	public WebElement RecentlyCreated;
 	
-	@FindBy(xpath ="//*[@id='fval1']")
-	public WebElement Contains;
+	@FindBy(xpath ="//div[contains(text(),'My Contacts')]")//*[@id='00B5e0000032Yuu_listSelect']/option[16]
+	public WebElement MyContacts;
 	
-	@FindBy(xpath ="//*[@id='toolsContent']/tbody/tr/td[2]/div/div/div/ul/li[4]/span/a")
-	public WebElement Tools;
+	@FindBy(xpath ="//*[@id=\"bodyCell\"]/div[3]/div[1]/div/div[2]/table/tbody/tr[2]/th/a")
+	public WebElement RecentContact;
 	
-	@FindBy(id="srch")
-	public WebElement SearchTextbox;
+	@FindBy(xpath ="//*[@id='editPage']/div[2]/div[1]/div[2]/table/tbody/tr[1]/td[2]/div/div[2]")
+	public WebElement Errormsg;
 	
-	@FindBy(xpath="//*[@id='stageForm']/div/div[2]/div[4]/input[2]")
-	public WebElement FindAccountBtn;
+	@FindBy(xpath="//*[@id='filter_element']/div/span/span[2]/a[2]")
+	public WebElement CreateNewuniqView;
 	
-	@FindBy(xpath="//*[@id='stageForm']/div/div[2]/div[5]/div/input[1]")
-	public WebElement NextBtn;
+	@FindBy(xpath="//*[@id='bodyCell']/div[1]/div[1]/div[1]/h2")
+	public WebElement NewViewHeader;
 	
-	@FindBy(xpath="//*[@id='stageForm']/div/div[2]/div[5]/div/input[2]")
-	public WebElement MergeAccount;	
+	@FindBy(xpath="//*[@id='editPage']/div[1]/table/tbody/tr/td[2]/input[2]")
+	public WebElement Cancel;
+	
+	@FindBy(xpath="//*[@id='con4']")
+	public WebElement AccountName;	
 	
 	//validation
-	@FindBy(xpath="//*[@id='stageForm']/div/div[1]/h2")
-	public WebElement MergeAccountsHeader;
+	@FindBy(xpath="//*[@id='topButtonRow']/input[2]")
+	public WebElement SavenNew;
 	
-	@FindBy(xpath="//*[@id='bodyCell']/div[3]/div[1]/div/div[2]/table/tbody/tr[2]/th/a")
-	public WebElement RecentlyViewdAccount;
+	@FindBy(xpath="//span[contains(text(),'Indian3')]")
+	public WebElement RecentItems;
 	
 	@FindBy(xpath="//option[contains(text(),'Recent')]")
 	public WebElement AccountValue;
