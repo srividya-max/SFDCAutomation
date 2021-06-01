@@ -3,12 +3,12 @@
 	<test name="LoginTest">
 <!--  		<parameter name="BrowserName" value="chrome"></parameter>  -->
 		<classes>
-			<class name="testcases.VerifyLoginFunctionality">
-				<methods>
-					<include name="VerifyLoginErrorMessage01"></include>
-					<include name="VerifyLoginErrorMessageo2"></include>
-				</methods>
-			</class>
+			<class name="testcases.VerifyLoginModule"></class>
+			<class name="testcases.VerifyUserMenuModule"></class>
+			<class name="testcases.VerifyOpportunityModule"></class>
+			<class name="testcases.VerifyAccountsModule"></class>
+			<class name="testcases.VerifyLeadsModule"></class>
+			<class name="testcases.VerifyContactsModule"></class>
 		</classes>
 	</test>
 	<!-- <test name="Test on Edge"> <parameter name="BrowserName" value="ie"></parameter> 

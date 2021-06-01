@@ -1,9 +1,12 @@
 package listeners;
 
+import java.io.IOException;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import base.BaseTest;
 import utilities.CommonUtilities;
 
 public class TestListeners implements ITestListener{
@@ -22,7 +25,7 @@ public class TestListeners implements ITestListener{
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		//test.addScreenCaptureFromPath(CommonUtilities.takeScreenshot()); 
+    
 		System.out.println("Test Method Failed");
 		
 	}

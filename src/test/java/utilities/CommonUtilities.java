@@ -1,12 +1,16 @@
 package utilities;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
 
 import org.apache.commons.io.FileUtils;
+//import org.apache.log4j.Logger;
+//import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -19,7 +23,18 @@ import com.aventstack.extentreports.Status;
 
 import base.BaseTest;
 
-public class CommonUtilities {
+public class CommonUtilities  {
+	
+//	Properties prop = new Properties();
+//	FileInputStream fileIn = null;
+//	Logger log = Logger.getLogger(getClass().getSimpleName());
+//	
+//	public  void loadLog4jProperty() throws Exception{
+//		
+//		fileIn = new FileInputStream(System.getProperty("user.dir")+"/resources/config/log4j.properties");
+//		prop.load(fileIn);
+//		PropertyConfigurator.configure(prop);
+//	}
 
 
 	public void enterText(WebElement element, String textToEnter, String elementName) {
@@ -46,7 +61,7 @@ public class CommonUtilities {
 
 	public boolean waitForElementVisible(WebElement element) {
 		try {
-			WebDriverWait wait = new WebDriverWait(BaseTest.driver, 30);
+			WebDriverWait wait = new WebDriverWait(BaseTest.driver, 50);
 			wait.until(ExpectedConditions.visibilityOf(element));
 			return true;
 		} catch (Exception e) {
@@ -54,7 +69,7 @@ public class CommonUtilities {
 		}
 	}
 
-	public String takeScreenshot() throws IOException {
+	public static String takeScreenshot() throws IOException {
 		TakesScreenshot screenshot = (TakesScreenshot) BaseTest.driver;
 		String addDate = new SimpleDateFormat("yyyymmddhhmm").format(new Date());
 		String destinationPath = System.getProperty("user.dir")+"\\Reports\\Screenshots\\" + addDate + ".PNG";
@@ -74,5 +89,7 @@ public class CommonUtilities {
 			BaseTest.test.log(Status.INFO, ExpectedmenuItems[i] + " is Verified");
 		}
 	}
+	
+
 
 }

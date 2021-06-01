@@ -22,21 +22,46 @@ package pages;
 	/************Object Repository*************/
 
 		
-		@FindBy(id = "username")
+		@FindBy(xpath = "//*[@id='username']")
 		public WebElement Username;
 		
-		@FindBy(id = "password")
+		@FindBy(xpath = "//*[@id='password']")
 		public WebElement Password;
 		
 		@FindBy(xpath = "//*[@id='Login']")
 		public WebElement Login;
 		
-//		@FindBy(id = "rem")
-//		public WebElement RememberMe;
-		
 		@FindBy(xpath = "//*[@id='error']")
 		public WebElement Errormsg;
 		
+		@FindBy(xpath = "//*[@id='rememberUn']")
+		public WebElement RememberMe;
+		
+		@FindBy(xpath = "//*[@id='userNavLabel']")
+		public WebElement Usermenu;
+		
+		@FindBy(xpath = "//*[@id='userNav-menuItems']/a[5]")
+		public WebElement Logout;
 
+		@FindBy(xpath = "/html/body/iframe")
+		public WebElement iframe;
+		
+		@FindBy(xpath = "//*[@id='idcard-identity']")
+		public WebElement Username1;
+		
+		@FindBy(id = "forgot_password_link")
+		public WebElement ForgotPwd;
+
+		@FindBy(xpath = "//*[@id='content']/p")
+		public WebElement ForgotPwdHeader;
+
+		@FindBy(xpath = "//*[@id='un']")
+		public WebElement ForgotPwdUser;
+		
+		@FindBy(id = "continue")
+		public WebElement Continue;
+		
+
+		
 	}
 

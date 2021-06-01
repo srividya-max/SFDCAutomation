@@ -1,9 +1,11 @@
 package base;
 
+import java.io.FileInputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -16,6 +18,11 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pages.Accountspage;
+import pages.Contactspage;
+import pages.Leadspage;
+import pages.Opportunitypage;
+import pages.UserMenupage;
 import pages.loginpage;
 import utilities.AppConstants;
 import utilities.CommonUtilities;
@@ -33,9 +40,14 @@ public class BaseTest {
 	public static Properties sProperties;
 	private String sBrowserName;
 	
-	public CommonUtilities oCommonUtilities = new CommonUtilities();
+	public static CommonUtilities oCommonUtilities = new CommonUtilities();
 	public DataUtilities oDataUtils = new DataUtilities();
 	public loginpage lp =  new loginpage(driver);
+	public UserMenupage um =  new UserMenupage(driver);
+	public Accountspage ac = new Accountspage(driver);
+	public Opportunitypage op = new Opportunitypage(driver);
+	public Leadspage Lp = new Leadspage(driver);
+	public Contactspage cp = new Contactspage(driver);
 	public SoftAssert sa = new SoftAssert();
 	
 	
@@ -56,6 +68,7 @@ public class BaseTest {
 		htmlReporter = new ExtentHtmlReporter(AppConstants.EXTENT_HTML_REPORT_PATH +"\\"+sReportTime +".html");
 		extent.attachReporter(htmlReporter);
 	}
+	
 
 	public WebDriver getDriver(String BrowserName) {
 
@@ -75,7 +88,7 @@ public class BaseTest {
 
 		}
 		
-		lp=new loginpage(driver);
+		cp=new Contactspage(driver);
 		return driver;
 
 	}
